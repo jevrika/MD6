@@ -1,3 +1,89 @@
-body {
-  background-color: antiquewhite;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
+
+body {
+  margin: 0 auto;
+  font-family: "Heebo", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+
+}
+
+
+.button {
+  padding: 20px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #FFF;
+
+  &.button--first {
+    background: #017187;
+    border:#017187;
+  }
+
+  &.button--second {
+    background: #5c0187b5;
+    border:#5c0187b5;
+  }
+
+  &.button--third {
+    background: #8711018f; 
+    border:#8711018f; 
+  }
+
+  &.button--fourth {
+    background: #01870ea1;
+    border:#01870ea1;
+  }
+
+  &.button--fifth {
+    background: #E2CF22;
+    border:#E2CF22;
+  }
+
+  &.button--sixth {
+    background: #011E87;
+    border:#011E87;
+  }
+
+  &.button--seventh{
+    background: #18D5E1;
+    border:#18D5E1;
+  }
+
+}
+
+.button__row {
+  padding:25px 25px; 
+}
+
+.first-box__row {
+  padding:25px 25px; 
+  display: flex;
+  gap: 0 100px;
+  
+}
+.second-box__row{
+  padding:25px 25px; 
+  display: flex;
+  gap: 0 100px;
+}
+
+.other-button__row{
+  padding:25px 25px; 
+}
+
+.col-3{
+  height: 300px;
+  background: #1FC2AE;
+  border:#1FC2AE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    color: #000;
+  font-size: 56px;
+  font-weight: 400;
+}
+
