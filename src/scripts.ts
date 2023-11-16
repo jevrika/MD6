@@ -1,19 +1,19 @@
-const buttonForTextChanging = document.querySelector('.button--second');
+const buttonForTextChanging = document.querySelector<HTMLButtonElement>('.button--second');
 const divTextToChange = document.querySelector('.box-second-text');
 
 buttonForTextChanging.addEventListener('click', () => {
   divTextToChange.textContent = 'SUCCESS';
 });
 
-const buttonForHiding = document.querySelector('.button--third');
-const divToHide = document.querySelector<HTMLElement>('.box-3');
+const buttonForHiding = document.querySelector<HTMLButtonElement>('.button--third');
+const divToHide = document.querySelector<HTMLDivElement>('.box-3');
 
 buttonForHiding.addEventListener('click', () => {
   divToHide.style.display = 'none';
 });
 
-const buttonToHideAndShow = document.querySelector('.button--fourth');
-const divToHideAndShow = document.querySelector<HTMLElement>('.box-4');
+const buttonToHideAndShow = document.querySelector<HTMLButtonElement>('.button--fourth');
+const divToHideAndShow = document.querySelector<HTMLDivElement>('.box-4');
 
 buttonToHideAndShow.addEventListener('click', () => {
   if (divToHideAndShow.style.visibility === 'hidden') {
@@ -23,8 +23,8 @@ buttonToHideAndShow.addEventListener('click', () => {
   }
 });
 
-const buttonForColorChanging = document.querySelector('.button--fifth');
-const divColortToChange = document.querySelector<HTMLElement>('.box-5');
+const buttonForColorChanging = document.querySelector<HTMLButtonElement>('.button--fifth');
+const divColortToChange = document.querySelector<HTMLDivElement>('.box-5');
 
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
@@ -48,8 +48,8 @@ buttonForColorChanging.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % colors.length;
 });
 
-const buttonForTimer = document.querySelector('.button--sixth');
-const divForTimer = document.querySelector<HTMLElement>('.box-sixth-text');
+const buttonForTimer = document.querySelector<HTMLButtonElement>('.button--sixth');
+const divForTimer = document.querySelector<HTMLDivElement>('.box-sixth-text');
 
 let secondsElapsed = 0;
 
@@ -66,16 +66,16 @@ buttonForTimer.addEventListener('click', () => {
   performAction();
 });
 
-const buttonForColorChangingForAllDivs = document.querySelector('.button--seventh');
+const buttonForColorChangingForAllDivs = document.querySelector<HTMLButtonElement>('.button--seventh');
 
-const containerToChangeColor = document.querySelector<HTMLElement>('body');
+const containerToChangeColor = document.querySelector<HTMLDivElement>('body');
 
-const firstDivToChangeColor = document.querySelector<HTMLElement>('.box-1');
-const secondDivToChangeColor = document.querySelector<HTMLElement>('.box-2');
-const thirdtDivToChangeColor = document.querySelector<HTMLElement>('.box-3');
-const fourthDivToChangeColor = document.querySelector<HTMLElement>('.box-4');
-const fifthtDivToChangeColor = document.querySelector<HTMLElement>('.box-5');
-const sixthtDivToChangeColor = document.querySelector<HTMLElement>('.box-6');
+const firstDivToChangeColor = document.querySelector<HTMLDivElement>('.box-1');
+const secondDivToChangeColor = document.querySelector<HTMLDivElement>('.box-2');
+const thirdtDivToChangeColor = document.querySelector<HTMLDivElement>('.box-3');
+const fourthDivToChangeColor = document.querySelector<HTMLDivElement>('.box-4');
+const fifthtDivToChangeColor = document.querySelector<HTMLDivElement>('.box-5');
+const sixthtDivToChangeColor = document.querySelector<HTMLDivElement>('.box-6');
 
 buttonForColorChangingForAllDivs.addEventListener('click', () => {
   firstDivToChangeColor.style.background = '#18D5E1';
@@ -88,7 +88,7 @@ buttonForColorChangingForAllDivs.addEventListener('click', () => {
   containerToChangeColor.style.background = '#000000';
 });
 
-const divTochangeColorMouseOver = document.querySelector<HTMLElement>('.box-1');
+const divTochangeColorMouseOver = document.querySelector<HTMLDivElement>('.box-1');
 
 divTochangeColorMouseOver.addEventListener('mouseover', () => {
   divTochangeColorMouseOver.style.background = 'red';
