@@ -14,8 +14,7 @@
     <div class="container">
         <div class="button__row row">
             <div class="col-2">
-                <button type="button" id="first--button" class="button button--first"
-                onclick="document.getElementsByClassName('box-1')[0].style.background= 'yellow'">Button 1</button>
+                <button type="button" class="button button--first">Button 1</button>
             </div>
             <div class="col-2">
                 <button type="button" class="button button--second" >Button 2</button>
@@ -35,15 +34,15 @@
         </div>
 
         <div class="first-box__row row">
-            <div class="col-3 box-1"> </div>
-            <div class="col-3 box-2 " ><h1 class="box-second-text">FAIL </h1> </div>
-            <div class="col-3 box-3"> </div>
+            <div class="col-3 box"> </div>
+            <div class="col-3 box" ><h1 class="box-second-text">FAIL </h1> </div>
+            <div class="col-3 box"> </div>
         </div>
 
         <div class="second-box__row row">
-            <div class="col-3 box-4"> </div>
-            <div class="col-3 box-5"> <h1 class="box-fifth-text">0 </h1></div>
-            <div class="col-3 box-6"> <h1 class="box-sixth-text">0 </h1></div>
+            <div class="col-3 box"> </div>
+            <div class="col-3 box"> <h1 class="box-fifth-text">0 </h1></div>
+            <div class="col-3 box"> <h1 class="box-sixth-text">0 </h1></div>
         </div>
 
         <div class="other-button__row row">
@@ -54,14 +53,18 @@
 
         <div class="row">
             <div class="col-2">
-                <input placeholder="text">
+                <div class="textInput__wrapper">
+                    <input class = 'textInput'>
+                </div>    
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-2">
+                <div class="box-for-text"></div>
+            </div>
+        </div>
     </div>
-
-
-
     <script src="/scripts.js">
     </script>
 </body>

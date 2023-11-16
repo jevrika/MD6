@@ -1,30 +1,26 @@
-const buttonForTextChanging = document.querySelector<HTMLButtonElement>('.button--second');
-const divTextToChange = document.querySelector('.box-second-text');
+const button = document.querySelectorAll<HTMLButtonElement>('.button');
 
-buttonForTextChanging.addEventListener('click', () => {
-  divTextToChange.textContent = 'SUCCESS';
+const box = document.querySelectorAll<HTMLDivElement>('.box');
+
+button[0].addEventListener('click', () => {
+  box[0].style.backgroundColor = 'yellow';
 });
 
-const buttonForHiding = document.querySelector<HTMLButtonElement>('.button--third');
-const divToHide = document.querySelector<HTMLDivElement>('.box-3');
-
-buttonForHiding.addEventListener('click', () => {
-  divToHide.style.display = 'none';
+button[1].addEventListener('click', () => {
+  box[1].textContent = 'SUCCESS';
 });
 
-const buttonToHideAndShow = document.querySelector<HTMLButtonElement>('.button--fourth');
-const divToHideAndShow = document.querySelector<HTMLDivElement>('.box-4');
+button[2].addEventListener('click', () => {
+  box[2].style.display = 'none';
+});
 
-buttonToHideAndShow.addEventListener('click', () => {
-  if (divToHideAndShow.style.visibility === 'hidden') {
-    divToHideAndShow.style.visibility = 'visible';
+button[3].addEventListener('click', () => {
+  if (box[3].style.visibility === 'hidden') {
+    box[3].style.visibility = 'visible';
   } else {
-    divToHideAndShow.style.visibility = 'hidden';
+    box[3].style.visibility = 'hidden';
   }
 });
-
-const buttonForColorChanging = document.querySelector<HTMLButtonElement>('.button--fifth');
-const divColortToChange = document.querySelector<HTMLDivElement>('.box-5');
 
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
@@ -43,21 +39,18 @@ const colors = [
 
 let currentIndex = 0;
 
-buttonForColorChanging.addEventListener('click', () => {
-  divColortToChange.style.background = colors[currentIndex];
+button[4].addEventListener('click', () => {
+  box[4].style.background = colors[currentIndex];
   currentIndex = (currentIndex + 1) % colors.length;
 });
 
-const buttonForTimer = document.querySelector<HTMLButtonElement>('.button--sixth');
-const divForTimer = document.querySelector<HTMLDivElement>('.box-sixth-text');
-
 let secondsElapsed = 0;
 
-buttonForTimer.addEventListener('click', () => {
+button[5].addEventListener('click', () => {
   function performAction() {
     setTimeout(() => {
       secondsElapsed += 1;
-      divForTimer.innerHTML = String(secondsElapsed);
+      box[5].innerHTML = String(secondsElapsed);
       if (secondsElapsed < 10) {
         performAction();
       }
@@ -66,30 +59,40 @@ buttonForTimer.addEventListener('click', () => {
   performAction();
 });
 
-const buttonForColorChangingForAllDivs = document.querySelector<HTMLButtonElement>('.button--seventh');
+const containerToChangeColor = document.querySelector<HTMLBodyElement>('body');
 
-const containerToChangeColor = document.querySelector<HTMLDivElement>('body');
-
-const firstDivToChangeColor = document.querySelector<HTMLDivElement>('.box-1');
-const secondDivToChangeColor = document.querySelector<HTMLDivElement>('.box-2');
-const thirdtDivToChangeColor = document.querySelector<HTMLDivElement>('.box-3');
-const fourthDivToChangeColor = document.querySelector<HTMLDivElement>('.box-4');
-const fifthtDivToChangeColor = document.querySelector<HTMLDivElement>('.box-5');
-const sixthtDivToChangeColor = document.querySelector<HTMLDivElement>('.box-6');
-
-buttonForColorChangingForAllDivs.addEventListener('click', () => {
-  firstDivToChangeColor.style.background = '#18D5E1';
-  secondDivToChangeColor.style.background = '#18D5E1';
-  thirdtDivToChangeColor.style.background = '#18D5E1';
-  fourthDivToChangeColor.style.background = '#18D5E1';
-  fifthtDivToChangeColor.style.background = '#18D5E1';
-  sixthtDivToChangeColor.style.background = '#18D5E1';
-
+button[6].addEventListener('click', () => {
+  for (let i = 0; i < box.length; i += 1) {
+    box[i].style.backgroundColor = '#18D5E1';
+  }
   containerToChangeColor.style.background = '#000000';
 });
 
-const divTochangeColorMouseOver = document.querySelector<HTMLDivElement>('.box-1');
+box[0].addEventListener('mouseenter', () => {
+  box[0].style.background = 'red';
+});
 
-divTochangeColorMouseOver.addEventListener('mouseover', () => {
-  divTochangeColorMouseOver.style.background = 'red';
+let timer = 0;
+let timerF: any;
+
+box[4].addEventListener('mouseenter', () => {
+  timerF = setInterval(() => {
+    if ((timer) < 10) {
+      timer += 1;
+      box[4].innerHTML = String(timer);
+    }
+  }, 1000);
+});
+
+box[4].addEventListener('mouseout', () => {
+  clearInterval(timerF);
+  timer = 0;
+  box[4].innerHTML = String(0);
+});
+
+const inputElement = document.querySelector<HTMLInputElement>('.textInput');
+const displayElement = document.querySelector<HTMLDivElement>('.box-for-text');
+
+inputElement.addEventListener('input', () => {
+  displayElement.textContent = `${inputElement.value}`;
 });
